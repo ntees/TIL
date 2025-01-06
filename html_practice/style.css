@@ -1,5 +1,6 @@
 body {
   margin: 0 auto;
+  margin-bottom: 100px;
 }
 
 h1 {
@@ -10,4 +11,30 @@ body>div {
   margin: 0 auto;
   margin-top: 40px;
   width: 960px;
+}
+
+#Cal-table {
+  /* background-color: gray; */
+  /* border-color: darkgray; */
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#Cal-table thead>tr>td {
+  background-color: cadetblue;
+  color: white;
+  /* border: 1px solid darkgray;
+  border-collapse: collapse; */
+}
+
+#Cal-table tbody>tr>td {
+  width: 78px;
+  height: 86px;
+  padding: 5px;
+  border-radius: 2px;
+  background-color: aliceblue;
+  font-size: small;
+  text-align: right;
+  vertical-align: top;
 }
