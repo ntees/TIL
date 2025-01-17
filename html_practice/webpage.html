@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 1. checkbox -->
+    <input type="checkbox" id="my-checkbox" />
+    <hr />
+
+    <!-- 2. submit -->
+    <form action="/articles/" id="my-form">
+      <input type="text" />
+      <input type="submit" value="제출!" />
+    </form>
+    <hr />
+
+    <!-- 3. link -->
+    <a href="https://google.com/" target="_blank" id="my-link">GoToGoogle</a>
+    <hr />
+
+    
+    <script>
+      // 1
+      const checkBox = document.querySelector("#my-checkbox");
+
+      checkBox.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log(event);
+      });
+
+      // 2
+      const formTag = document.querySelector("#my-form");
+
+      formTag.addEventListener("submit", function (event) {
+        console.log(event);
+        event.preventDefault();
+        event.target.reset();
+      });
+
+      // 3
+      const aTag = document.querySelector("#my-link");
+
+      aTag.addEventListener("click", function (event) {
+        console.log(event);
+        event.preventDefault();
+      });
+
+      // 4
+      document.addEventListener("scroll", function (event) {
+        // console.log(window.scrollX, window.scrollY);
+        console.log(event);
+        console.log(event.cancelable);
+        event.preventDefault();
+      });
+
+        // console.log('A');
+        
+        // setTimeout(() => {
+        //     console.log('B');  // 함수 실행 후 1초 후에 실행
+        // }, 1000);
+        
+        // console.log('C');
+        //////////////////////////////////////////////////////////
+
+        // let number = 0;
+
+        // setInterval(() => {  // 1초마다 아래 코드가 실행된다.(반복)
+        // console.log(number);
+        // number = number + 1;
+        // }, 1000);
+        //////////////////////////////////////////////////////////
+
+
+
+    </script>
+</body>
+</html>

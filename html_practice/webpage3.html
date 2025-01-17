@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1 -->
+    <h2>수동 카운터</h2>
+    <p class="p1">0</p>
+    <button class="btn-plus">하나씩 더하기!</button>
+    <button class="btn-minus">하나씩 빼기!</button>
+    <button class="btn-reset">초기화</button>
+    <hr/>
+
+    <h2>자동 카운터</h2>
+    <p class="p2">0</p>
+    <p>10이 되면 멈춥니다!</p>
+
+    <script>
+        const btnPlus = document.querySelector(".btn-plus");
+        const btnMinus = document.querySelector(".btn-minus");
+        const btnReset = document.querySelector(".btn-reset");
+
+        const p1 = document.querySelector(".p1");  // 텍스트 노출
+
+        const changeBtn = function (behavior) {
+            let cnt = parseInt(p1.innerText);
+
+            if (behavior === 'plus') {
+                cnt++;
+            } else if (behavior === 'minus') {
+                cnt--;
+            } else if (behavior === 'reset') {
+                cnt = 0;
+            }
+            p1.innerText = cnt;
+        }
+        
+    // 앗! 여기 너무 헷갈린다!!!    // 앗! 여기 너무 헷갈린다!!!
+        btnPlus.addEventListener('click', () => changeBtn('plus'));
+        btnMinus.addEventListener('click', () => changeBtn('minus'));
+        btnReset.addEventListener('click', () => changeBtn('reset'));
+    // 앗! 여기 너무 헷갈린다!!!    // 앗! 여기 너무 헷갈린다!!!
+        
+
+        const p2 = document.querySelector(".p2");
+        
+        let interval = setInterval(cb, 1000);
+        
+        let cnt2 = parseInt(p2.innerText);
+        function cb() {
+            cnt2++;
+            if(cnt2 > 10) {
+                clearInterval(interval);
+            }
+            else {
+                p2.innerText = cnt2;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
